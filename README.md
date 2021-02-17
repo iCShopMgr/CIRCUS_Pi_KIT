@@ -1,7 +1,7 @@
 # 更新資訊
 * 2021/2/17 新增可自訂名稱的XBM積木，並修改PCA9685中文顯示。
 <p align="center">
-  <img src="https://github.com/iCShopMgr/CIRCUS_Pi_KIT/blob/main/Album/mfrc522_show.png" width="700"/>
+  <img src="https://github.com/iCShopMgr/CIRCUS_Pi_KIT/blob/main/Album/xbm.png" width="700"/>
 </p>
 
 * 2021/1/21 修正部份無法中文化問題。
