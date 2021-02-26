@@ -1,4 +1,12 @@
 # 更新資訊
+* 2021/2/26 新增HUSKYLENS 與M5Stack Mini RFID Reader/Writer Unit (MFRC522)，並修正Neo Pixel Show 的Bug。
+<p align="center">
+  <img src="https://github.com/iCShopMgr/CIRCUS_Pi_KIT/blob/main/Album/huskylens.png" width="700"/>
+</p>
+<p align="center">
+  <img src="https://github.com/iCShopMgr/CIRCUS_Pi_KIT/blob/main/Album/m5rfid.png" width="700"/>
+</p>
+
 * 2021/2/17 新增可自訂名稱的XBM積木，並修改PCA9685中文顯示。
 <p align="center">
   <img src="https://github.com/iCShopMgr/CIRCUS_Pi_KIT/blob/main/Album/xbm.png" width="700"/>
@@ -48,6 +56,7 @@ https://docs.m5stack.com/#/en/quick_start/unitv/v_function
 * 2021/1/19 修正RockBot移動程式結合變數會錯誤的部份，以及伺服馬達函數Bug。
 * 2021/1/21 修正部份無法中文化問題。
 * 2021/2/17 新增可自訂名稱的XBM積木，並修改PCA9685中文顯示。
+* 2021/2/26 新增HUSKYLENS 與M5Stack Mini RFID Reader/Writer Unit (MFRC522)，並修正Neo Pixel Show 的Bug。
 
 # 自訂OLED顯示圖案教學步驟
 * 首先下載並解壓縮BlocklyDuino V3 主程式，測試用版本是下載blocklyduino-3.0.312b-win64-ide.zip，連結如下：
