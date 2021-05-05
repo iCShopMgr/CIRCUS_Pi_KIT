@@ -1,0 +1,148 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="765" x="138" y="13">
+    <statement name="CONTENT">
+      <block type="huskylens_uart_init" id="766">
+        <field name="RX_PIN">2</field>
+        <field name="TX_PIN">3</field>
+        <next>
+          <block type="huskylens_set_mode" id="767">
+            <field name="MODE_LIST">LT</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="768">
+        <statement name="CONTENT">
+          <block type="huskylens_read_data" id="769">
+            <next>
+              <block type="variables_set" id="770" inline="true">
+                <field name="TYPE">Number</field>
+                <field name="VAR">target</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="771" inline="true">
+                    <field name="OP">MINUS</field>
+                    <value name="A">
+                      <block type="huskylens_get_data_arrow" id="772">
+                        <field name="ARROW_DATA">XT</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="773">
+                        <field name="NUM">160</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="774" inline="true">
+                    <field name="TYPE">Number</field>
+                    <field name="VAR">motor_L</field>
+                    <value name="VALUE">
+                      <block type="math_constrain" id="775" inline="true">
+                        <value name="VALUE">
+                          <block type="math_arithmetic" id="776" inline="true">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <block type="math_number" id="777">
+                                <field name="NUM">255</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_map_int" id="778" inline="false">
+                                <field name="FROMLOW">-160</field>
+                                <field name="FROMHIGH">160</field>
+                                <field name="TOLOW">-255</field>
+                                <field name="TOHIGH">255</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="779">
+                                    <field name="TYPE">Number</field>
+                                    <field name="VAR">target</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="LOW">
+                          <block type="math_number" id="780">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="HIGH">
+                          <block type="math_number" id="781">
+                            <field name="NUM">255</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="782" inline="true">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">motor_R</field>
+                        <value name="VALUE">
+                          <block type="math_constrain" id="783" inline="true">
+                            <value name="VALUE">
+                              <block type="math_arithmetic" id="784" inline="true">
+                                <field name="OP">MINUS</field>
+                                <value name="A">
+                                  <block type="math_number" id="785">
+                                    <field name="NUM">255</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_map_int" id="786" inline="false">
+                                    <field name="FROMLOW">-160</field>
+                                    <field name="FROMHIGH">160</field>
+                                    <field name="TOLOW">-255</field>
+                                    <field name="TOHIGH">255</field>
+                                    <value name="VALUE">
+                                      <block type="variables_get" id="787">
+                                        <field name="TYPE">Number</field>
+                                        <field name="VAR">target</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="LOW">
+                              <block type="math_number" id="788">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="HIGH">
+                              <block type="math_number" id="789">
+                                <field name="NUM">255</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="mooncar_move_motor" id="790" inline="true">
+                            <value name="SPEED_L">
+                              <block type="variables_get" id="791">
+                                <field name="TYPE">Number</field>
+                                <field name="VAR">motor_L</field>
+                              </block>
+                            </value>
+                            <value name="SPEED_R">
+                              <block type="variables_get" id="792">
+                                <field name="TYPE">Number</field>
+                                <field name="VAR">motor_R</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
