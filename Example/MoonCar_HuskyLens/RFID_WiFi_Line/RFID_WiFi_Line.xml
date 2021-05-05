@@ -1,0 +1,267 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="1426" x="138" y="13">
+    <statement name="CONTENT">
+      <block type="huskylens_uart_init" id="1427">
+        <field name="RX_PIN">2</field>
+        <field name="TX_PIN">3</field>
+        <next>
+          <block type="huskylens_set_mode" id="1428">
+            <field name="MODE_LIST">LT</field>
+            <next>
+              <block type="linkit_wifi_wait_until_ready" id="1429" inline="false">
+                <value name="SSID">
+                  <block type="text" id="1430">
+                    <field name="TEXT">iCShop_1</field>
+                  </block>
+                </value>
+                <value name="PASSWORD">
+                  <block type="text" id="1431">
+                    <field name="TEXT">075564686</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="setupSheets" id="1432" inline="true">
+                    <value name="sheetId">
+                      <block type="text" id="1433">
+                        <field name="TEXT">1L1v3Wch0S7yPmfk-pO82ByfS_868aONRgyby0o5tKAE</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="setupForm" id="1434" inline="true">
+                        <value name="sheetTag">
+                          <block type="text" id="1435">
+                            <field name="TEXT">Sheet1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1436">
+        <statement name="CONTENT">
+          <block type="huskylens_read_data" id="1437">
+            <next>
+              <block type="variables_set" id="1438" inline="true">
+                <field name="TYPE">Number</field>
+                <field name="VAR">target</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="1439" inline="true">
+                    <field name="OP">MINUS</field>
+                    <value name="A">
+                      <block type="huskylens_get_data_arrow" id="1440">
+                        <field name="ARROW_DATA">XT</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="1441">
+                        <field name="NUM">160</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="1442" inline="true">
+                    <field name="TYPE">Number</field>
+                    <field name="VAR">motor_L</field>
+                    <value name="VALUE">
+                      <block type="math_constrain" id="1443" inline="true">
+                        <value name="VALUE">
+                          <block type="math_arithmetic" id="1444" inline="true">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <block type="math_number" id="1445">
+                                <field name="NUM">255</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_map_int" id="1446" inline="false">
+                                <field name="FROMLOW">-160</field>
+                                <field name="FROMHIGH">160</field>
+                                <field name="TOLOW">-255</field>
+                                <field name="TOHIGH">255</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="1447">
+                                    <field name="TYPE">Number</field>
+                                    <field name="VAR">target</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="LOW">
+                          <block type="math_number" id="1448">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="HIGH">
+                          <block type="math_number" id="1449">
+                            <field name="NUM">255</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="1450" inline="true">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">motor_R</field>
+                        <value name="VALUE">
+                          <block type="math_constrain" id="1451" inline="true">
+                            <value name="VALUE">
+                              <block type="math_arithmetic" id="1452" inline="true">
+                                <field name="OP">MINUS</field>
+                                <value name="A">
+                                  <block type="math_number" id="1453">
+                                    <field name="NUM">255</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_map_int" id="1454" inline="false">
+                                    <field name="FROMLOW">-160</field>
+                                    <field name="FROMHIGH">160</field>
+                                    <field name="TOLOW">-255</field>
+                                    <field name="TOHIGH">255</field>
+                                    <value name="VALUE">
+                                      <block type="variables_get" id="1455">
+                                        <field name="TYPE">Number</field>
+                                        <field name="VAR">target</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="LOW">
+                              <block type="math_number" id="1456">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="HIGH">
+                              <block type="math_number" id="1457">
+                                <field name="NUM">255</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="mooncar_move_motor" id="1458" inline="true">
+                            <value name="SPEED_L">
+                              <block type="variables_get" id="1459">
+                                <field name="TYPE">Number</field>
+                                <field name="VAR">motor_L</field>
+                              </block>
+                            </value>
+                            <value name="SPEED_R">
+                              <block type="variables_get" id="1460">
+                                <field name="TYPE">Number</field>
+                                <field name="VAR">motor_R</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set" id="1461" inline="true">
+                                <field name="TYPE">String</field>
+                                <field name="VAR">rfid</field>
+                                <value name="VALUE">
+                                  <block type="m5_mini_rfid" id="1462"></block>
+                                </value>
+                                <next>
+                                  <block type="controls_if" id="1463" inline="false">
+                                    <value name="IF0">
+                                      <block type="logic_compare" id="1464" inline="true">
+                                        <field name="OP">NEQ</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="1465">
+                                            <field name="TYPE">String</field>
+                                            <field name="VAR">rfid</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="text" id="1466">
+                                            <field name="TEXT"></field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO0">
+                                      <block type="mooncar_move_motor" id="1467" inline="true">
+                                        <value name="SPEED_L">
+                                          <block type="math_number" id="1468">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="SPEED_R">
+                                          <block type="math_number" id="1469">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="sendToGoogle" id="1470" inline="false">
+                                            <field name="dateInclude">1</field>
+                                            <value name="data">
+                                              <block type="data_join" id="1471" inline="false">
+                                                <mutation items="2"></mutation>
+                                                <value name="ADD0">
+                                                  <block type="text" id="1472">
+                                                    <field name="TEXT">RFID: </field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                  <block type="variables_get" id="1473">
+                                                    <field name="TYPE">String</field>
+                                                    <field name="VAR">rfid</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="mooncar_move_motor" id="1474" inline="true">
+                                                <value name="SPEED_L">
+                                                  <block type="math_number" id="1475">
+                                                    <field name="NUM">100</field>
+                                                  </block>
+                                                </value>
+                                                <value name="SPEED_R">
+                                                  <block type="math_number" id="1476">
+                                                    <field name="NUM">100</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="delay_custom" id="1477" inline="false">
+                                                    <value name="DELAY_TIME">
+                                                      <block type="math_number" id="1478">
+                                                        <field name="NUM">500</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
