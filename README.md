@@ -1,4 +1,9 @@
 # 更新資訊
+* 2021/6/22 新增MCS替代方案的Adafruit IO與Pixetto 視覺感測器。
+<p align="center">
+  <img src="https://github.com/iCShopMgr/CIRCUS_Pi_KIT/blob/main/Album/10.png" width="700"/>
+</p>
+
 * 2021/5/6 新增MoonCar初始化顏色感測器時可以調整比對顏色時的誤差。
 * 2021/2/26 新增HUSKYLENS 與M5Stack Mini RFID Reader/Writer Unit (MFRC522)，並修正Neo Pixel Show 的Bug。
 <p align="center">
