@@ -1,5 +1,8 @@
 # 更新資訊
 * 2021/7/1 新增EZ Start Kit Q。
+<p align="center">
+  <img src="https://github.com/iCShopMgr/CIRCUS_Pi_KIT/blob/main/Album/11.png" width="700"/>
+</p>
 
 * 2021/6/22 新增MCS替代方案的Adafruit IO與Pixetto 視覺感測器。
 <p align="center">
