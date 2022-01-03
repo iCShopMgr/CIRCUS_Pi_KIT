@@ -70,13 +70,6 @@ https://docs.m5stack.com/#/en/quick_start/unitv/v_function
 * 2021/2/26 新增HUSKYLENS 與M5Stack Mini RFID Reader/Writer Unit (MFRC522)，並修正Neo Pixel Show 的Bug。
 
 # 自訂OLED顯示圖案教學步驟
-* 首先下載並解壓縮BlocklyDuino V3 主程式，測試用版本是下載blocklyduino-3.0.312b-win64-ide.zip，連結如下：
-https://github.com/MediaTek-Labs/BlocklyDuino-for-LinkIt/releases/tag/3.0.312b
-* 下載並解壓縮0730擴充程式並打開，將資料夾內的arduino-1.8.5 與package.nw 兩資料夾連同內部檔案直接複製到BlocklyDuino3 資料夾內並覆蓋檔案。
-<p align="center">
-  <img src="https://github.com/iCShopMgr/EZ_Start_Kit_for_BlocklyDuino_feat.liou/blob/main/Album/01.png" width="700"/>
-</p>
-
 * 開啟BlocklyDuino 並點選EZ Start Kit 可看到已擴充的程式積木，使用OLED顯示圖案會需要初始化、自訂自己的圖案、顯示等步驟，如下圖所示紅框：
 <p align="center">
   <img src="https://github.com/iCShopMgr/EZ_Start_Kit_for_BlocklyDuino_feat.liou/blob/main/Album/02.png" width="700"/>
